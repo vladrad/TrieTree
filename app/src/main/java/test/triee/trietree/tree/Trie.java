@@ -14,30 +14,28 @@ public class Trie {
     public List<String> dictionary = new ArrayList<>();
     private static Trie instance;
 
-    public Trie(){
+    public Trie() {
         instance = this;
     }
 
-    public static Trie get(){
+    public static Trie get() {
         return instance; // used to get dictionary
     }
 
-    public void insertWord(String word){
+    public void insertWord(String word) {
         dictionary.add(word);// im keeping a list of words we are adding
         root.insertWord(word);// now inserting word into tree
     }
 
-    public List<String> getWordSuggestions(String wordToSearch){ //search for auto complete
-        if(wordToSearch == null || wordToSearch.equals("")){
+    public List<String> getWordSuggestions(String wordToSearch) { //search for auto complete
+        if (wordToSearch == null || wordToSearch.equals("")) {
             return new ArrayList<>();
         }
-        if(dictionary.contains(wordToSearch)){
+        if (dictionary.contains(wordToSearch)) {
             return Arrays.asList(wordToSearch);
         }
-        return root.findAllWords(wordToSearch,new String("")); //find all words, start with a empty string
+        return root.findAllWords(wordToSearch, new String("")); //find all words, start with a empty string
     }
-
-
 
 
 }

@@ -20,7 +20,6 @@ public class AutoCompleteTest {
         Trie trie = setUpTrie();
         List<String> result = trie.getWordSuggestions("kar"); // get auto complete
         System.out.print(Arrays.toString(result.toArray()));
-
         assertEquals(1, result.size());
     }
 
@@ -72,7 +71,7 @@ public class AutoCompleteTest {
         assertEquals(0, result.size());
     }
 
-    public Trie setUpTrie(){
+    public Trie setUpTrie() {
         Trie trie = new Trie(); //create a new trie
         trie.insertWord("help");//add some words
         trie.insertWord("heat");
