@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         trie.insertWord("credit");
         trie.insertWord("karma");
         trie.insertWord("hit");
-        List<String> result = trie.getAutoComplete("kar"); // get auto complete
+        List<String> result = trie.getWordSuggestions("kar"); // get auto complete
         System.out.print(Arrays.toString(result.toArray()));
     }
 }

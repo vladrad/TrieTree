@@ -26,7 +26,7 @@ public class Trie {
         root.insertWord(word);// now inserting word into tree
     }
 
-    public List<String> getAutoComplete(String auto){ //search for auto complete
+    public List<String> getWordSuggestions(String auto){ //search for auto complete
         return root.findAllWords(auto,""); //find all words, start with a empty string
     }
 
