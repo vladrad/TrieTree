@@ -31,9 +31,6 @@ public class Trie {
         if (wordToSearch == null || wordToSearch.equals("")) {
             return new ArrayList<>();
         }
-        if (dictionary.contains(wordToSearch)) {
-            return Arrays.asList(wordToSearch);
-        }
         return root.findAllWords(wordToSearch, new String("")); //find all words, start with a empty string
     }
 

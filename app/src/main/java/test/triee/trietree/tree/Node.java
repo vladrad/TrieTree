@@ -35,6 +35,10 @@ public class Node {
             }
         }
         List<String> result = new ArrayList<>(); // this will hold our results
+
+        if(Trie.get().dictionary.contains(currentWord)){
+            result.add(currentWord);
+        }
         getEndings(currentNeighbors, word, result); //call and search from last node down
         return result; // once we find it lets search from that last node recursive
     }
