@@ -1,6 +1,7 @@
 package test.triee.trietree.tree;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -26,8 +27,14 @@ public class Trie {
         root.insertWord(word);// now inserting word into tree
     }
 
-    public List<String> getWordSuggestions(String auto){ //search for auto complete
-        return root.findAllWords(auto,""); //find all words, start with a empty string
+    public List<String> getWordSuggestions(String wordToSearch){ //search for auto complete
+        if(wordToSearch == null || wordToSearch.equals("")){
+            return new ArrayList<>();
+        }
+        if(dictionary.contains(wordToSearch)){
+            return Arrays.asList(wordToSearch);
+        }
+        return root.findAllWords(wordToSearch,new String("")); //find all words, start with a empty string
     }
 
 
